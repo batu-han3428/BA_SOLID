@@ -10,7 +10,6 @@ namespace ISP
                 Interface Segrigation Principle
 
                     Sınıflar ihtiyacı olmayan özellikleri ve davranışları almamalıdır.    
-
             */
         }
     }
