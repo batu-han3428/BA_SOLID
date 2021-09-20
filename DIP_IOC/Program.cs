@@ -22,13 +22,13 @@ namespace DIP_IOC
 
             var servicesProvider = services.BuildServiceProvider();
 
-            using (var scope = servicesProvider.CreateScope())
-            {
+             servicesProvider.CreateScope();
+           
                 var personelService = servicesProvider.GetService<IPersonelService>();
 
                 personelService.ekle(ayşe);
                 personelService.ekle(fatma);
-            }
+           
 
             //service.ekle(ayşe);
             //service.ekle(fatma);
