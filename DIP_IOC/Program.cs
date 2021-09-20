@@ -20,7 +20,16 @@ namespace DIP_IOC
             IPersonel fatma = new Sekreter();
             fatma.AdSoyad = "Fatma yapıcı";
 
-        
+            var servicesProvider = services.BuildServiceProvider();
+
+            using (var scope = servicesProvider.CreateScope())
+            {
+                var personelService = servicesProvider.GetService<IPersonelService>();
+
+                personelService.ekle(ayşe);
+                personelService.ekle(fatma);
+            }
+
             //service.ekle(ayşe);
             //service.ekle(fatma);
         }
@@ -28,8 +37,8 @@ namespace DIP_IOC
         private static void ServiceLifetime()
         {
             
-            services.AddSingleton<IPersonelService>();
-            services.BuildServiceProvider();
+            services.AddSingleton<IPersonelService, PersonelService>();
+            //services.BuildServiceProvider();
         }
     }
 }
