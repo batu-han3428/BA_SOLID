@@ -22,13 +22,11 @@ namespace DIP_IOC
 
             var servicesProvider = services.BuildServiceProvider();
 
-             servicesProvider.CreateScope();
-           
-                var personelService = servicesProvider.GetService<IPersonelService>();
+            var personelService = servicesProvider.GetService<IPersonelService>();
 
-                personelService.ekle(ayşe);
-                personelService.ekle(fatma);
-           
+            personelService.ekle(ayşe);
+            personelService.ekle(fatma);
+
 
             //service.ekle(ayşe);
             //service.ekle(fatma);
@@ -36,7 +34,7 @@ namespace DIP_IOC
 
         private static void ServiceLifetime()
         {
-            
+
             services.AddSingleton<IPersonelService, PersonelService>();
             //services.BuildServiceProvider();
         }
